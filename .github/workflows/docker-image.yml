@@ -12,7 +12,7 @@ jobs:
 
     env:
       IMAGE_NAME: ${{secrets.DOCKER_USERNAME}}/pytorch-24.04-py3-mlperf
-      IMAGE_TAG: ${{}}
+      # IMAGE_TAG: ${{}}
 
     steps:
     - uses: actions/checkout@v4

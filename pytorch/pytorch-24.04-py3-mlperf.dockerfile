@@ -7,7 +7,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y wget
 
 ENV CM_REPOS=/CM
 RUN python -m pip install cmind
-RUN cm pull repo mlcommons@mlops4cm
+RUN cm pull repo mlcommons@ck
 ENV CM_REPOS=""
 
 # Change the pip and sudo permissions inside repo

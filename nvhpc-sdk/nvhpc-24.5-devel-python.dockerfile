@@ -7,6 +7,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean
 
 RUN ln -s /usr/bin/python3 /usr/bin/python
-ENV PATH=$PATH:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 RUN apt-get update && apt-get install -y python3-venv
 RUN python -m pip install --upgrade pip

@@ -11,17 +11,9 @@ RUN python -m pip install cmind
 RUN python -m pip install --upgrade pip
 RUN cm pull repo mlcommons@cm4mlops
 
-# Change the pip and sudo permissions inside repo
-RUN sed -i -e 's/CM/tmp\/CM/g' /CM/index.json
-RUN sed -i -e 's/CM/tmp\/CM/g' /CM/repos.json
-
-RUN git clone --recurse-submodules https://github.com/mlcommons/inference.git /inference --depth 5
-
-ENV CM_REPOS="/tmp/CM"
-ENV PYTHONUSERBASE="/tmp/pyenv"
 
 COPY TensorRT-10.1.0.27.Linux.x86_64-gnu.cuda-12.4.tar.gz /.
 COPY TensorRT-10.1.0.27.Ubuntu-22.04.aarch64-gnu.cuda-12.4.tar.gz /.
 
 ENV TENSORRT_FILE_ARM="/TensorRT-10.1.0.27.Ubuntu-22.04.aarch64-gnu.cuda-12.4.tar.gz"
-ENV TENSORRT_FILE_x86="TensorRT-10.1.0.27.Linux.x86_64-gnu.cuda-12.4.tar.gz"
+ENV TENSORRT_FILE_x86="/TensorRT-10.1.0.27.Linux.x86_64-gnu.cuda-12.4.tar.gz"
